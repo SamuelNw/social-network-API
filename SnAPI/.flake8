@@ -1,8 +1,4 @@
 
 [flake8]
-exclude =
-    migrations,
-    __pycache__,
-    settings.py,
-    manage.py,
+exclude = .git,__pycache__,settings.py,migrations,
 max-line-length = 100
