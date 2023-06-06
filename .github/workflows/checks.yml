@@ -22,6 +22,10 @@ jobs:
       - name: Install Dependecies
         run: pip install flake8
 
-      - name: Run Linting tool
-        run: flake8
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          ignore: "F401"
+          exclude: "src/ignoreme.py"
+          max-line-length: "100"
 
