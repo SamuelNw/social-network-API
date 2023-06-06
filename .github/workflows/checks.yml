@@ -14,5 +14,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Run Flake8
-        run: flake8
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8.2"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
