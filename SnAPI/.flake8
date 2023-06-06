@@ -1,4 +1,9 @@
 
 [flake8]
-exclude = .git,__pycache__,settings.py,migrations,
+exclude =
+    .git,
+    __pycache__,
+    settings.py,
+    migrations,
 max-line-length = 100
+ignore = E203, W503
