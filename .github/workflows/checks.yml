@@ -24,9 +24,4 @@ jobs:
 
       - name: Run Linting tool
         run: flake8
-        # uses: py-actions/flake8@v2
-        with:
-          ignore: "F401"
-          exclude: "migrations, __pycache__, settings.py, manage.py"
-          max-line-length: "100"
 
