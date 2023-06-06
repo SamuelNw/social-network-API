@@ -27,5 +27,5 @@ jobs:
         with:
           ignore: "F401"
           exclude: ".git,__pycache__,migrations,settings.py,manage.py"
-          # max-line-length: "100"
+          max-line-length: "100"
 
