@@ -26,6 +26,6 @@ jobs:
         uses: py-actions/flake8@v2
         with:
           ignore: "F401"
-          exclude: "src/ignoreme.py"
-          max-line-length: "100"
+          exclude: ".git,__pycache__,migrations,settings.py,manage.py"
+          # max-line-length: "100"
 
