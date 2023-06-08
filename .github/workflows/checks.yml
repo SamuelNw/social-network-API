@@ -19,9 +19,6 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Run Unit Tests
-        run: python manage.py test
-
       - name: Install Dependecies
         run: pip install flake8
 
@@ -31,4 +28,10 @@ jobs:
           ignore: "F401"
           exclude: ".git,__pycache__,migrations,settings.py,manage.py"
           max-line-length: "100"
+
+      - name: List files
+        run: ls -R
+
+      - name: Run Unit Tests
+        run: python SnAPI/manage.py test
 
