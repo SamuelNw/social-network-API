@@ -24,15 +24,7 @@ jobs:
 
       - name: Flake8 Lint
         run: flake8
-        # uses: py-actions/flake8@v2
-        # with:
-        #   ignore: "F401"
-        #   exclude: ".git,__pycache__,migrations,settings.py,manage.py"
-        #   max-line-length: "100"
-
-      - name: List files
-        run: ls -R
 
       - name: Run Unit Tests
-        run: python SnAPI/manage.py test
+        run: python manage.py test
 
