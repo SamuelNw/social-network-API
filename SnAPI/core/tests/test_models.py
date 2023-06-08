@@ -19,6 +19,7 @@ class ModelTests(TestCase):
         self.assertTrue(user.check_password(password))
 
     def test_user_emails_normalized(self):
+        """Test that user emails are stored as needed."""
         sample_emails = [
             ["test1@EXAMPLE.com", "test1@example.com"],
             ["Test2@Example.com", "Test2@example.com"],
@@ -32,3 +33,8 @@ class ModelTests(TestCase):
                 password="changeme"
             )
             self.assertEqual(user.email, expected)
+
+    def test_user_email_required(self):
+        """Test that a value error is thrown when an email is not provided."""
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user("", "testpassword123")
