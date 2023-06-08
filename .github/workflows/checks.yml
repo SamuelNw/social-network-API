@@ -19,6 +19,9 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Run Unit Tests
+        run: python manage.py test
+
       - name: Install Dependecies
         run: pip install flake8
 
