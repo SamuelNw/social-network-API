@@ -26,5 +26,5 @@ jobs:
         run: flake8
 
       - name: Run Unit Tests
-        run: python manage.py test
+        run: python SnAPI/manage.py test
 
