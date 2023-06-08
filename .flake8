@@ -6,4 +6,4 @@ exclude =
     settings.py,
     manage.py,
 max-line-length = 120
-ignore = "F401"
+ignore = F401
