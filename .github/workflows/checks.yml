@@ -22,12 +22,13 @@ jobs:
       - name: Install Dependecies
         run: pip install -r requirements.txt
 
-      - name: flake8 Lint
-        uses: py-actions/flake8@v2
-        with:
-          ignore: "F401"
-          exclude: ".git,__pycache__,migrations,settings.py,manage.py"
-          max-line-length: "100"
+      - name: Flake8 Lint
+        run: flake8
+        # uses: py-actions/flake8@v2
+        # with:
+        #   ignore: "F401"
+        #   exclude: ".git,__pycache__,migrations,settings.py,manage.py"
+        #   max-line-length: "100"
 
       - name: List files
         run: ls -R
