@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import dj_database_url
 import os
 from pathlib import Path
-# from .confidential import OBJ
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,7 +83,6 @@ WSGI_APPLICATION = 'SnAPI.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.config(default=OBJ["DATABASE_URL"], conn_max_age=1000)
     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"), conn_max_age=1000)
 }
 
