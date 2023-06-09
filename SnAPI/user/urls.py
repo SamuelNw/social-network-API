@@ -4,7 +4,7 @@ User API urls.
 
 from django.urls import path
 
-from views import CreateUserAPIView
+from .views import CreateUserAPIView
 
 
 app_name = "user"
