@@ -41,6 +41,15 @@ class PublicUserAPITests(TestCase):
 
     def test_user_already_exists(self):
         """Test users are unique."""
+        payload = {
+            "email": "user@example.com",
+            "password": "changeme",
+            "name": "Test User"
+        }
+        create_user(**payload)
+        res = self.client.post(CREATE_USER_URL, payload)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_password_too_short(self):
         """Test passwords are longer than 5 chars."""
