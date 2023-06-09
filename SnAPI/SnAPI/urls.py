@@ -25,8 +25,6 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include(router.urls)),
-    path("api-auth/", include("rest_framework.urls", namespace="restframework")),
 
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
