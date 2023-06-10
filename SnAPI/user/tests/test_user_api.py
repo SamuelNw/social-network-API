@@ -148,3 +148,16 @@ class PrivateUserAPITests(TestCase):
             "email": self.user.email,
             "password": self.password
         })
+
+    def test_updating_user_details_success(self):
+        """Test that updating user data is a success."""
+        payload = {
+            "name": "Updated Name",
+            "password": "Changed_Password"
+        }
+        res = self.client.patch(ME_URL, payload)
+        self.user.refresh_from_db()
+
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        self.assertEqual(self.user.name, payload["name"])
+        self.assertTrue(self.user.check_password(payload["password"]))
