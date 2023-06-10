@@ -83,3 +83,21 @@ class PublicUserAPITests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertIn("token", res.data)
+
+    def test_no_token_created_for_invalid_entries(self):
+        """Test no token created if details are wrong."""
+        user_details = {
+            "email": "user@example.com",
+            "password": "testpass123",
+            "name": "Test Name"
+        }
+        create_user(**user_details)
+        payload = {
+            "email": user_details["email"],
+            "password": "wrongpassword"
+        }
+
+        res = self.client.post(TOKEN_URL, payload)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertNotIn("token", res.data)
