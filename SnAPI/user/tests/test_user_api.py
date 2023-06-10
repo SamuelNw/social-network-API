@@ -138,3 +138,13 @@ class PrivateUserAPITests(TestCase):
             name="Test User"
         )
         self.client.force_authenticate(user=self.user)
+
+    def test_authorized_requests_success(self):
+        """Test authorized fetch requests are a success."""
+        res = self.client.get(ME_URL)
+
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        self.assertEqual(res.data, {
+            "email": self.user.email,
+            "password": self.password
+        })
