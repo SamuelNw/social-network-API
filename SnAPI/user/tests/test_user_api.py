@@ -146,7 +146,7 @@ class PrivateUserAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, {
             "email": self.user.email,
-            "password": self.password
+            "name": self.user.name
         })
 
     def test_updating_user_details_success(self):
