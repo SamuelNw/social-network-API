@@ -6,7 +6,7 @@ from django.urls import path
 
 from .views import (
     CreateUserAPIView,
-    AuthTokenAPIView
+    GenerateTokenAPIView
 )
 
 
@@ -14,5 +14,5 @@ app_name = "user"
 
 urlpatterns = [
     path("create/", CreateUserAPIView.as_view(), name="create"),
-    path("token/", AuthTokenAPIView.as_view(), name="token"),
+    path("token/", GenerateTokenAPIView.as_view(), name="token"),
 ]
