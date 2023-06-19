@@ -25,6 +25,9 @@ jobs:
       - name: Flake8 Lint
         run: flake8
 
+      - name: Change directory
+        run: cd SnAPI
+
       - name: Run Unit Tests
-        run: python SnAPI/manage.py test
+        run: python manage.py test
 
