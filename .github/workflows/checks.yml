@@ -26,6 +26,8 @@ jobs:
         run: flake8
 
       - name: Run Unit Tests
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           cd SnAPI
           python manage.py test
